@@ -5,6 +5,7 @@
 }
 
 body {
+    /*more on this crazy alphanumeial value in a minute! */
     color: #39a6b2;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -65,3 +66,12 @@ footer div{
 footer a {
     color: #024e76;
 }
+
+/* Hero Style Start */
+.hero {
+    background-image: url(assets/images/run buddy image.jpeg);
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+/*Hero Style End */
