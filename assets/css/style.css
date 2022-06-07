@@ -17,6 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 header h1 {
@@ -50,6 +57,17 @@ header nav ul li a {
     font-size: 1.55vw;
 }
 
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+/* Header / Navbar Styles end */
+
+/* footer styles start */
+
 footer {
     background: #fce138;
     width: 100%;
@@ -74,6 +92,9 @@ footer div {
 footer a {
     color: #024e76;
 }
+/* end footer styles */
+
+/* style all section tags */
 
 section{
     padding: 60px;
@@ -83,21 +104,42 @@ section{
 .hero {
     background-image: url("../images/hero-bg.jpeg");
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
 }
-/* Hero Style End */
+
+.hero-cta {
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.hero-cta h2 {
+    font-style: italic;
+    font-size: 55px;
+    color:#fce138;
+}
 
 .hero-form {
     border: 3px solid #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.hero-form button:hover {
+    background-color: #39a6b2;
 }
 
 .hero-form h3 {
@@ -117,7 +159,13 @@ section{
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
+
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+  }
 
 .hero-form label {
     margin: 0 5px;
@@ -129,22 +177,31 @@ section{
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
+}
+/* Hero styles end */
+
+/* section title styles start */
+.section-title {
+    font-size: 48px;
+    color: #024e76;
+    border-bottom: 3px solid;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
 }
 
-.hero-cta {
-    width: 35%;
-    text-align: right;
-    margin: 3.5%;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.2;
+.primary-border {
+    border-color: #fce138;
 }
 
-.hero-cta h2 {
-    font-style: italic;
-    font-size: 55px;
-    color:#fce138;
+.secondary-border {
+    border-color: #39a6b2;
 }
+/* section titles styles end */
+
+/* what we do styles starts */
 
 .intro p {
     /* add this alongside your other declarations */
@@ -154,6 +211,12 @@ section{
     width: 80%;
     font-size: 20px;
     text-align: center;
+}
+/* what we do styles ends */
+
+/* what you do styles starts */
+.steps {
+    background: #fce138;
 }
 
 .step {
@@ -167,26 +230,19 @@ section{
     justify-content: space-between;
 }
 
-.steps {
-    background: #fce138;
-}
+.step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
+  }
+
+  .step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+  }
 
 .steps h3 {
     color: #024e76;
     font-size: 46px;
     margin-top: 10px;
     flex: 1 30%;
-}
-
-.step-text p {
-    color: #39a6b2;
-    font-size: 18px;
-}
-
-.step-text h4 {
-    font-size: 26px;
-    line-height: 1.5;
-    color: #024e76;
 }
 
 .step-info {
@@ -209,23 +265,17 @@ section{
     flex: 12;
 }
 
-.section-title {
-    font-size: 48px;
+.step-text p {
+    color: #39a6b2;
+    font-size: 18px;
+}
+
+.step-text h4 {
+    font-size: 26px;
+    line-height: 1.5;
     color: #024e76;
-    border-bottom: 3px solid;
-    padding-bottom: 20px;
-    text-align: center;
-    margin: 0 auto 35px auto;
-    width: 50%;
 }
-
-.primary-border {
-    border-color: #fce138;
-}
-
-.secondary-border {
-    border-color: #39a6b2;
-}
+/* what you do styles end */
 
 /* meet the trainers start */
 .trainers {
@@ -269,17 +319,23 @@ section{
   /* Trainer styles ends */
 
   /* Reach out styles start */
- .contact-info > * {
-    flex: 1;
-    margin: 15px;
-}
-
-.contact {
+  .contact {
     background: #024e76;
 }
 
 .contact h2 {
     color: #fce138;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+ .contact-info > * {
+    flex: 1;
+    margin: 15px;
 }
 
 .contact-info iframe {
@@ -302,16 +358,6 @@ section{
     font-style: normal;
 }
 
-.contact-info a {
-    color: #fce138;
-}
-
-.contact-info {
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 .contact-form input, .contact-form textarea {
     border: 1px solid #024e76;
     display: block;
@@ -321,9 +367,16 @@ section{
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
-}
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+  }
 
-.contact-form button {
+  .contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+  }
+
+  .contact-form button {
     width: 100%;
     border: none;
     background: #fce138;
@@ -331,19 +384,40 @@ section{
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
 }
 
-.flex-row {
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+}
+
+
+.contact-info a {
+    color: #fce138;
+}
+
+/* reach out styles end */
+
+/* utilities */
+.text-left {
+    text-align: left;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .flex-row {
     display: flex;
-}
-
-/*reach out style ends */
+  }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     header {
         padding-bottom: 0;
         justify-content: center;
+        position: relative;
     }
     
     header h1 {
@@ -433,15 +507,15 @@ section{
         flex: 0 100%;
     }
 
-    .contact-form {
-        order: 3;
-    }
-
     .contact-info {
         text-align: center;
     }
 
     .contact-info > * {
         flex: 0 100%;
+    }
+
+    .contact-form {
+        order: 3;
     }
   }
